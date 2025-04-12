@@ -1,0 +1,15 @@
+# .air.toml
+# air configuration file
+
+# Папка для временных файлов (bin, tmp и т. д.)
+tmp_dir = "tmp"
+
+# Папки, которые не следует отслеживать
+exclude_dirs = ["bin", "tmp"]
+
+# Команда для сборки приложения
+build = "go build -o bin/myapp cmd/myapp/main.go"
+
+# Логи
+[log]
+time = true
