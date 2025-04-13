@@ -6,16 +6,20 @@ endif
 
 .PHONY: build
 build:
-	templ generate internal/view
+	templ generate 
 	go build -o $(BINPATH) cmd/myapp/main.go
 
 .PHONY: run
-run: build build-css
+run: build build-css build-js
 	$(BINPATH)
 
 .PHONY: build-css
 build-css:
 	npm --prefix web run build:css
+
+.PHONY: build-js
+build-css:
+	npm --prefix web run build:js
 
 .PHONY: watch-app
 watch-app:
